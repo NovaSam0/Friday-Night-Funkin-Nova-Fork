@@ -13,9 +13,15 @@ Organizing folders and Performance/Optimizing images - Thank you [Tink/SquidBowl
 
 ## Gameplay features I am going to be Adding/Try Adding:
 Updating HealthIcons so you can animate them and a editor for it
+
 Adding Custom Speech Bubbles
+
 Some Base Game features (Sticker transitions, Results, Etc.)
+
 Other Shit
+
+
+
 
 ## Psychs boring Read Me:
 
