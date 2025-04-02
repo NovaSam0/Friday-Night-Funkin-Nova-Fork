@@ -940,7 +940,7 @@ class PlayState extends MusicBeatState
 		var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
 		var introImagesArray:Array<String> = switch(stageUI) {
 			case "pixel": ['pixelUI/ready-pixel', 'pixelUI/set-pixel', 'pixelUI/date-pixel'];
-			case "normal": ["ready", "set" ,"go"];
+			case "normal": ["ui/ready", "ui/set" ,"ui/go"];
 			default: ['${uiPrefix}UI/ready${uiPostfix}', '${uiPrefix}UI/set${uiPostfix}', '${uiPrefix}UI/go${uiPostfix}'];
 		}
 		introAssets.set(stageUI, introImagesArray);

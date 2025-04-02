@@ -40,7 +40,7 @@ class AchievementsMenuState extends MusicBeatState
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 
-		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
+		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menus/menuBGBlue'));
 		menuBG.antialiasing = ClientPrefs.data.antialiasing;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
 		menuBG.updateHitbox();
@@ -59,7 +59,7 @@ class AchievementsMenuState extends MusicBeatState
 			if(option.unlocked)
 			{
 				#if MODS_ALLOWED Mods.currentModDirectory = option.mod; #end
-				var image:String = 'achievements/' + option.name;
+				var image:String = 'menus/achievementsmenu/achievements/' + option.name;
 				if(Paths.fileExists('images/$image-pixel.png', IMAGE))
 				{
 					graphic = Paths.image('$image-pixel');
@@ -67,9 +67,9 @@ class AchievementsMenuState extends MusicBeatState
 				}
 				else graphic = Paths.image(image);
 
-				if(graphic == null) graphic = Paths.image('unknownMod');
+				if(graphic == null) graphic = Paths.image('menus/modmenu/unknownMod');
 			}
-			else graphic = Paths.image('achievements/lockedachievement');
+			else graphic = Paths.image('menus/achievementsmenu/achievements/lockedachievement');
 
 			var spr:FlxSprite = new FlxSprite(0, Math.floor(grpOptions.members.length / MAX_PER_ROW) * 180).loadGraphic(graphic);
 			spr.scrollFactor.x = 0;
@@ -321,7 +321,7 @@ class ResetAchievementSubstate extends MusicBeatSubstate
 				option.curProgress = 0;
 				option.name = state.nameText.text = '???';
 				if(option.maxProgress > 0) state.progressTxt.text = '0 / ' + option.maxProgress;
-				state.grpOptions.members[state.curSelected].loadGraphic(Paths.image('achievements/lockedachievement'));
+				state.grpOptions.members[state.curSelected].loadGraphic(Paths.image('menus/achievementsmenu/achievements/lockedachievement'));
 				state.grpOptions.members[state.curSelected].antialiasing = ClientPrefs.data.antialiasing;
 
 				if(state.progressBar.visible)

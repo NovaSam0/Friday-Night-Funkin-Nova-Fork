@@ -67,7 +67,7 @@ class ModsMenuState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		bg = new FlxSprite().loadGraphic(Paths.image('menus/menuDesat'));
 		bg.color = 0xFF665AFF;
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		add(bg);
@@ -211,19 +211,19 @@ class ModsMenuState extends MusicBeatState
 		var buttonsX = bgButtons.x + 320;
 		var buttonsY = bgButtons.y + 10;
 
-		var button = new MenuButton(buttonsX, buttonsY, 80, 80, Paths.image('modsMenuButtons'), function() moveModToPosition(0), 54, 54); //Move to the top
+		var button = new MenuButton(buttonsX, buttonsY, 80, 80, Paths.image('menus/modmenu/modsMenuButtons'), function() moveModToPosition(0), 54, 54); //Move to the top
 		button.icon.animation.add('icon', [0]);
 		button.icon.animation.play('icon', true);
 		add(button);
 		buttons.push(button);
 		
-		var button = new MenuButton(buttonsX + 100, buttonsY, 80, 80, Paths.image('modsMenuButtons'), function() moveModToPosition(curSelectedMod - 1), 54, 54); //Move up
+		var button = new MenuButton(buttonsX + 100, buttonsY, 80, 80, Paths.image('menus/modmenu/modsMenuButtons'), function() moveModToPosition(curSelectedMod - 1), 54, 54); //Move up
 		button.icon.animation.add('icon', [1]);
 		button.icon.animation.play('icon', true);
 		add(button);
 		buttons.push(button);
 		
-		var button = new MenuButton(buttonsX + 200, buttonsY, 80, 80, Paths.image('modsMenuButtons'), function() moveModToPosition(curSelectedMod + 1), 54, 54); //Move down
+		var button = new MenuButton(buttonsX + 200, buttonsY, 80, 80, Paths.image('menus/modmenu/modsMenuButtons'), function() moveModToPosition(curSelectedMod + 1), 54, 54); //Move down
 		button.icon.animation.add('icon', [2]);
 		button.icon.animation.play('icon', true);
 		add(button);
@@ -235,7 +235,7 @@ class ModsMenuState extends MusicBeatState
 				button.enabled = false;
 		}
 
-		settingsButton = new MenuButton(buttonsX + 300, buttonsY, 80, 80, Paths.image('modsMenuButtons'), function() //Settings
+		settingsButton = new MenuButton(buttonsX + 300, buttonsY, 80, 80, Paths.image('menus/modmenu/modsMenuButtons'), function() //Settings
 		{
 			var curMod:ModItem = modsGroup.members[curSelectedMod];
 			if(curMod != null && curMod.settings != null && curMod.settings.length > 0)
@@ -252,7 +252,7 @@ class ModsMenuState extends MusicBeatState
 		if(modsGroup.members[curSelectedMod].settings == null || modsGroup.members[curSelectedMod].settings.length < 1)
 			settingsButton.enabled = false;
 
-		var button = new MenuButton(buttonsX + 400, buttonsY, 80, 80, Paths.image('modsMenuButtons'), function() //On/Off
+		var button = new MenuButton(buttonsX + 400, buttonsY, 80, 80, Paths.image('menus/modmenu/modsMenuButtons'), function() //On/Off
 		{
 			var curMod:ModItem = modsGroup.members[curSelectedMod];
 			var mod:String = curMod.folder;
@@ -806,7 +806,7 @@ class ModItem extends FlxSpriteGroup
 	public var iconFps:Int = 10;
 	public var bgColor:FlxColor = 0xFF665AFF;
 	public var pack:Dynamic = null;
-	public var folder:String = 'unknownMod';
+	public var folder:String = 'modmenu/unknownMod';
 	public var mustRestart:Bool = false;
 	public var settings:Array<Dynamic> = null;
 
@@ -868,7 +868,7 @@ class ModItem extends FlxSpriteGroup
 			icon.loadGraphic(Paths.cacheBitmap(file, bmp), true, 150, 150);
 			if(isPixel) icon.antialiasing = false;
 		}
-		else icon.loadGraphic(Paths.image('unknownMod'), true, 150, 150);
+		else icon.loadGraphic(Paths.image('menus/modmenu/unknownMod'), true, 150, 150);
 		icon.scale.set(0.5, 0.5);
 		icon.updateHitbox();
 		

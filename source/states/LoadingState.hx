@@ -143,7 +143,7 @@ class LoadingState extends MusicBeatState
 		#end
 
 		#if PSYCH_WATERMARKS // PSYCH LOADING SCREEN
-		var bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		var bg = new FlxSprite().loadGraphic(Paths.image('menus/menuDesat'));
 		bg.antialiasing = ClientPrefs.data.antialiasing;
 		bg.setGraphicSize(Std.int(FlxG.width));
 		bg.color = 0xFFD16FFF;
@@ -155,7 +155,7 @@ class LoadingState extends MusicBeatState
 		loadingText.borderSize = 2;
 		addBehindBar(loadingText);
 	
-		logo = new FlxSprite(0, 0).loadGraphic(Paths.image('loading_screen/icon'));
+		logo = new FlxSprite(0, 0).loadGraphic(Paths.image('menus/loading_screen/icon'));
 		logo.antialiasing = ClientPrefs.data.antialiasing;
 		logo.scale.set(0.75, 0.75);
 		logo.updateHitbox();
@@ -171,7 +171,7 @@ class LoadingState extends MusicBeatState
 		bg.screenCenter();
 		addBehindBar(bg);
 
-		funkay = new FlxSprite(0, 0).loadGraphic(Paths.image('funkay'));
+		funkay = new FlxSprite(0, 0).loadGraphic(Paths.image('menus/funkay'));
 		funkay.antialiasing = ClientPrefs.data.antialiasing;
 		funkay.setGraphicSize(0, FlxG.height);
 		funkay.updateHitbox();

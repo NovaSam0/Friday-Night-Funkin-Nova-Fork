@@ -1,4 +1,23 @@
-# Friday Night Funkin' - Psych Engine
+# Friday Night Funkin' - Psych Engine Nova Fork
+
+## Read Me First, im important:
+
+Hello This is a Fork of Psych Engine I will be changing things to my liking and adding onto what was archived from the orginal Psych Engine.
+
+More Stuff to be added on to in the coming future.
+![](docs/img/dumbassmf.png)
+
+## Gameplay features I Added:
+Organizing folders and Performance/Optimizing images - Thank you [Tink/SquidBowl](https://github.com/SquidBowl) for giving me the idea
+
+## Gameplay features I am going to be Adding/Try Adding:
+Updating HealthIcons so you can animate them and a editor for it
+Adding Custom Speech Bubbles
+Some Base Game features (Sticker transitions, Results, Etc.)
+Other Shit
+
+## Psychs boring Read Me:
+
 Engine originally used on [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier alternative to newbie coders.
 
 ## Installation:

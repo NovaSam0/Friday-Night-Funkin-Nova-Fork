@@ -128,7 +128,7 @@ class TitleState extends MusicBeatState
 		Conductor.bpm = musicBPM;
 
 		logoBl = new FlxSprite(logoPosition.x, logoPosition.y);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl.frames = Paths.getSparrowAtlas('menus/titlescreen/logoBumpin');
 		logoBl.antialiasing = ClientPrefs.data.antialiasing;
 
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
@@ -145,7 +145,7 @@ class TitleState extends MusicBeatState
 			logoBl.shader = swagShader.shader;
 		}
 		
-		gfDance.frames = Paths.getSparrowAtlas(characterImage);
+		gfDance.frames = Paths.getSparrowAtlas('menus/titlescreen/' + characterImage);
 		if(!useIdle)
 		{
 			gfDance.animation.addByIndices('danceLeft', animationName, danceLeftFrames, "", 24, false);
@@ -161,7 +161,7 @@ class TitleState extends MusicBeatState
 
 		var animFrames:Array<FlxFrame> = [];
 		titleText = new FlxSprite(enterPosition.x, enterPosition.y);
-		titleText.frames = Paths.getSparrowAtlas('titleEnter');
+		titleText.frames = Paths.getSparrowAtlas('menus/titlescreen/titleEnter');
 		@:privateAccess
 		{
 			titleText.animation.findByPrefix(animFrames, "ENTER IDLE");
@@ -190,7 +190,7 @@ class TitleState extends MusicBeatState
 		credTextShit.screenCenter();
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
+		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('menus/titlescreen/newgrounds_logo'));
 		ngSpr.visible = false;
 		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
 		ngSpr.updateHitbox();
@@ -226,9 +226,9 @@ class TitleState extends MusicBeatState
 
 	function loadJsonData()
 	{
-		if(Paths.fileExists('images/gfDanceTitle.json', TEXT))
+		if(Paths.fileExists('images/menus/titlescreen//gfDanceTitle.json', TEXT))
 		{
-			var titleRaw:String = Paths.getTextFromFile('images/gfDanceTitle.json');
+			var titleRaw:String = Paths.getTextFromFile('images/menus/titlescreen/gfDanceTitle.json');
 			if(titleRaw != null && titleRaw.length > 0)
 			{
 				try
@@ -246,7 +246,7 @@ class TitleState extends MusicBeatState
 	
 					if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.trim().length > 0)
 					{
-						var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image(titleJSON.backgroundSprite));
+						var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menus/titlescreen/' + titleJSON.backgroundSprite));
 						bg.antialiasing = ClientPrefs.data.antialiasing;
 						add(bg);
 					}
